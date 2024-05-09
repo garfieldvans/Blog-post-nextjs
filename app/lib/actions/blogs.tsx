@@ -10,7 +10,6 @@ export async function getPosts() {
       const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
       const userData = await userResponse.json();
 
-       // Fetch all comments for each post
        const commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`);
        const commentsData = await commentsResponse.json();
        
@@ -46,8 +45,6 @@ export async function getPosts() {
   }
 }
 
-
-// "use server" 
 
 export async function getUsers() {
   try {

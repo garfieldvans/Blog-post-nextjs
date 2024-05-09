@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky inset-x-0 inset-y-0 py-3 md:px-18 px-10 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
+    <header className="sticky inset-x-0 inset-y-0 py-6 md:py-4 md:px-18 px-10 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
       <div className=" mr-6 ">
         <h2 className="text-black text-md md:text-lg font-bold logo">NEXT Admin</h2>
       </div>
@@ -38,7 +38,6 @@ const Header: React.FC = () => {
         </Link>
       </div>
       <div className="sm:hidden ml-auto">
-        {/* Hamburger menu for mobile */}
         <button
           className="block text-black focus:outline-none"
           onClick={toggleMobileMenu}
@@ -69,7 +68,6 @@ const Header: React.FC = () => {
       </div>
       {isMobileMenuOpen && (
         <div className="sm:hidden absolute top-full inset-y-0 right-0 bg-yellow-300 flex flex-col w-4/12 h-screen ">
-          {/* responsive mobile */}
           <Link
             href="/pages/blogs"
             className={`py-2 px-5 ${

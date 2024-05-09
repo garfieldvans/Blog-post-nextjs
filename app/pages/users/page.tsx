@@ -6,7 +6,6 @@ import { FaPencilAlt, FaPlus } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
 import { IoClose, IoTrash } from "react-icons/io5";
 
-// Buat komponen modal terpisah
 const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }> = ({
   title,
   onClose,
@@ -179,7 +178,6 @@ const Users = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    // Reset formData saat menutup modal
     setFormData({
       name: "",
       username: "",
