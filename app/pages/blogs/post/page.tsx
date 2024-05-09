@@ -23,7 +23,7 @@ export default function DetailPost({
       : [];
 
   return (
-    <div className="md:flex md:flex-row md:gap-x-16 md:mt-4 mt-3 postContainer">
+    <div className="md:flex md:flex-row md:gap-x-16 md:mt-4 mt-3 postContainer text-slate-700">
       <div className="flex items-start bg-yellow-300 p-3 rounded-lg md:w-3/12 md:flex-none md:justify-center md:max-h-64 ">
         <div className=" flex justify-center flex-col w-full px-4 ">
           <div className="gap-x-3 flex items-center md:pt-4 flex-col">
@@ -144,22 +144,22 @@ export default function DetailPost({
           <div className="">
             <div className="bg-yellow-500 w-full h-px my-3  hidden md:block " />
             <h1 className="text-xs lg:text-md my-4 flex items-center">
-              <IoMailOutline size={17} color="tomato" className="mx-1" />{" "}
+              <IoMailOutline size={17} color="slate" className="mx-1" />{" "}
               {searchParams.email}
             </h1>
             <div className="bg-yellow-500 w-full h-px my-3 hidden md:block" />
             <p className="flex items-center text-xs lg:text-md">
-              <FaRegCommentDots size={17} color="tomato" className="mx-1" />{" "}
+              <FaRegCommentDots size={17} color="slate" className="mx-1" />{" "}
               {comments.length}
             </p>
           </div>
         </div>
       </div>
       <div className=" md:grow py-4">
-        <h1 className="font-bold lg:text-3xl md:text-2xl text-lg text-justify capitalize mb-6 ">
+        <h1 className="font-bold lg:text-3xl md:text-2xl text-lg text-justify uppercase mb-6 ">
           {searchParams.title}
         </h1>
-        <h1 className="text-justify mb-10">{searchParams.body}</h1>
+        <h1 className="text-justify mb-10 first-letter:capitalize">{searchParams.body}</h1>
 
         <section className="bg-white antialiased">
           <div className="">
@@ -171,7 +171,7 @@ export default function DetailPost({
 
             <form className="mb-6">
               <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200">
-                <label htmlFor="comment" className="sr-only">
+                <label htmlFor="comment" className="sr-only first-letter:capitalize">
                   Your comment
                 </label>
                 <textarea
@@ -193,7 +193,7 @@ export default function DetailPost({
           <article className="py-4 mb-3 text-base bg-white border-t border-gray-200" key={comment.id}>
             <footer className="flex justify-between items-center mb-2">
               <div className="flex items-center justify-between w-full">
-                <p className="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold truncate">
+                <p className="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold truncate capitalize">
                   <img
                     className="mr-2 w-6 h-6 rounded-full"
                     src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
@@ -208,13 +208,13 @@ export default function DetailPost({
                 </p>
               </div>
             </footer>
-            <p className="text-gray-500 text-justify text-xs md:text-sm">
+            <p className="text-gray-500 text-justify text-xs md:text-sm first-letter:capitalize">
             {comment.body}
             </p>
             <div className="flex items-center mt-4 space-x-4">
             <button type="button"
-                className="flex items-center text-xs text-gray-500 hover:underline font-medium">
-                    <PiChatText size={15} color="indigo" />             
+                className="flex items-center text-xs text-slate-800 hover:underline font-semibold gap-x-1 ">
+                    <PiChatText size={15} />             
                 Reply
             </button>
             </div>

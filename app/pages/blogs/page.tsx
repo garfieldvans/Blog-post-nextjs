@@ -31,7 +31,7 @@ export default function Blogs() {
 
   return (
     <div>
-      <h1 className="font-bold text-2xl my-4">Blogs</h1>
+      <h1 className="font-bold text-2xl mt-6">Blogs</h1>
       <div className="">
         {posts.slice(0, displayCount).map((post: any, index:number) => {
           // console.log(post.comments);
@@ -48,7 +48,7 @@ export default function Blogs() {
                   <h3 className="mb-3 text-slate-900 font-bold text-xl capitalize">
                     {post.title}
                   </h3>
-                  <div className="prose prose-slate prose-sm text-slate-600 line-clamp-2 md:line-clamp-none">
+                  <div className="prose prose-slate prose-sm text-slate-600 line-clamp-2 md:line-clamp-none first-letter:capitalize">
                     <p>{post.body}</p>
                   </div>
                   <div className="my-3 text-slate-700 text-xs">

@@ -9,7 +9,7 @@ const ScrollToTopButton = () => {
   useEffect(() => {
     const toggleVisibility = () => {
       // if the user scrolls down, show the button
-      window.scrollY > 300 ? setIsVisible(true) : setIsVisible(false)
+      window.scrollY > 200 ? setIsVisible(true) : setIsVisible(false)
     }
     // listen for scroll events
     window.addEventListener("scroll", toggleVisibility)
@@ -31,7 +31,7 @@ const ScrollToTopButton = () => {
 
   return (
     <button
-      className={`fixed bottom-4 md:bottom-10 md:right-10 bg-yellow-500 right-4 rounded-full p-4 outline-none transition-opacity duration-200 ${
+      className={`fixed bottom-28 md:right-10 bg-yellow-500 right-4 rounded-full p-4 outline-none transition-opacity duration-200 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={scrollToTop}

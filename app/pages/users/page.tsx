@@ -4,20 +4,21 @@ import { getUsers } from "@/app/lib/actions/blogs";
 import React, { useEffect, useState } from "react";
 import { FaPencilAlt, FaPlus } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
+import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoClose, IoTrash } from "react-icons/io5";
 
-const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }> = ({
-  title,
-  onClose,
-  formData,
-  onChange,
-}) => {
+const Modal: React.FC<{
+  title: string;
+  onClose: () => void;
+  formData: any;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}> = ({ title, onClose, formData, onChange }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white rounded-lg shadow dark:bg-gray-700 lg:w-6/12 md:w-9/12 w-11/12 p-4 text-white">
-        <div className="flex justify-end">
+      <div className="bg-white rounded-lg shadow lg:w-6/12 md:w-9/12 w-11/12 p-4 text-white">
+        <div className="flex justify-end font-bold text-white text-lg">
           <button onClick={onClose}>
-          <IoClose size={20} color="white" />
+            <IoClose size={30} />
           </button>
         </div>
         <div className="flex justify-center mb-2">
@@ -30,7 +31,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                 <div className="col-span-2">
                   <label
                     htmlFor="name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
                   >
                     Full Name
                   </label>
@@ -38,7 +39,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                     type="text"
                     name="name"
                     id="name"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="Type product name"
                     required
                     value={formData.name}
@@ -48,7 +49,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                 <div className="col-span-2">
                   <label
                     htmlFor="username"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Username
                   </label>
@@ -56,7 +57,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                     type="text"
                     name="username"
                     id="username"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="Type your full name"
                     required
                     value={formData.username}
@@ -66,7 +67,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                 <div className="col-span-2">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900"
                   >
                     Email
                   </label>
@@ -74,7 +75,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="e.g yourmail11@mail.example"
                     required
                     value={formData.email}
@@ -84,7 +85,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                 <div className="col-span-2">
                   <label
                     htmlFor="website"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-medium text-gray-900 "
                   >
                     Website
                   </label>
@@ -92,7 +93,7 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
                     type="text"
                     name="website"
                     id="website"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="e.g www.yourcompany.org"
                     required
                     value={formData.website}
@@ -102,20 +103,19 @@ const Modal: React.FC<{ title: string; onClose: () => void; formData: any; onCha
               </div>
 
               <div className="flex flex-row justify-around md:justify-between lg:justify-between">
-              <button
-                type="submit"
-                className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 min-w-28 md:min-w-52 lg:m-w-28 justify-center"
-              >
-                Save
-              </button>
-              <button
-                type="submit"
-                className="text-white inline-flex items-center bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-grey-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-grey-800 min-w-28 md:min-w-52 lg:m-w-28 justify-center"
-              >
-                Cancel
-              </button>
+                <button
+                  type="submit"
+                  className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center min-w-28 md:min-w-52 lg:m-w-28 justify-center"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={onClose}
+                  className="text-white inline-flex items-center bg-rose-700 hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-grey-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center min-w-28 md:min-w-52 lg:m-w-28 justify-center"
+                >
+                  Cancel
+                </button>
               </div>
-              
             </form>
           </div>
         </div>
@@ -185,41 +185,62 @@ const Users = () => {
       website: "",
     });
   };
-  
 
   return (
     <div>
-      <h1 className="font-bold text-2xl my-4">Users</h1>
-      <div className="flex w-full justify-end my-3">
+      <h1 className="font-bold text-2xl mt-6">Users</h1>
+      <div className="flex w-full justify-between flex-row gap-x-3 my-3">
         <button
           type="submit"
           onClick={handleCreateUser}
-          className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex flex-row gap-x-2"
+          className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center flex flex-row gap-x-2"
         >
-          <FaPlus size={15} color="white" />
-          Create new user
+          <FaPlus size={15} />
+          <h2 className="hidden md:block">Create new user</h2>
         </button>
+
+        <form className=" min-w-40 md:min-w-80 lg:min-w-96 text-slate-600 ps-4 md:ps-0 rounded-lg ">
+          <div className="flex border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+            <div className=" items-center ps-3 pointer-events-none hidden md:flex">
+              <HiMagnifyingGlass size={20} />
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              className="block ps-2 w-full p-2 ml-2 sm:ml-0 text-sm text-gray-900 focus:outline-none focus:ring-0"
+              placeholder="Search Users..."
+              required
+            />
+            <button
+              type="submit"
+              className="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-r-lg text-sm px-4 py-2"
+            >
+              <HiMagnifyingGlass size={20} className="md:hidden" />
+              <h2 className="hidden md:block">Search</h2>
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="relative overflow-x-auto shadow-md rounded-lg">
-        <table className="w-full text-xs md:text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="relative overflow-x-auto shadow-md rounded-lg ">
+        <table className="w-full text-xs md:text-sm text-left rtl:text-right text-slate-300 bg-slate-900">
+          <thead className="text-xs uppercase bg-slate-600 ">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="flex items-center justify-center p-3">
                 No.
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p-3">
                 Nama User
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p-3">
                 Username
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p-3">
                 Email
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p-3">
                 Website
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="p-3">
                 Action
               </th>
             </tr>
@@ -229,29 +250,31 @@ const Users = () => {
               return (
                 <tr
                   key={user.id}
-                  className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                  className="odd:bg-grey-800 even:bg-slate-800 border-b "
                 >
-                  <td className="px-6 py-4">{index + 1}</td>
+                  <td className="flex items-center justify-center">
+                    {index + 1}
+                  </td>
                   <td
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    className="px-2 py-2 md:px-6 md:py-4 font-medium whitespace-nowrap "
                   >
                     {user.name}
                   </td>
-                  <td className="px-6 py-4">{user.username}</td>
-                  <td className="px-6 py-4">{user.email}</td>
-                  <td className="px-6 py-4">{user.website}</td>
-                  <td className="px-6 py-4 flex flex-row gap-x-2 md:gap-x-3">
+                  <td className="px-2 py-2 md:px-6 md:py-4">{user.username}</td>
+                  <td className="px-2 py-2 md:px-6 md:py-4">{user.email}</td>
+                  <td className="px-2 py-2 md:px-6 md:py-4">{user.website}</td>
+                  <td className="px-2 py-2 md:px-6 md:py-4 flex flex-row gap-x-2 md:gap-x-3">
                     <a
                       href="#"
                       onClick={() => handleEditUser(user)}
-                      className="font-medium text-white-600 dark:text-blue-500 bg-blue-700 p-2 rounded-lg flex items-center justify-center"
+                      className="font-medium text-white-600 bg-blue-700 p-2 rounded-lg flex items-center justify-center"
                     >
                       <FaPencilAlt size={15} color="#fff" />
                     </a>
                     <a
                       href="#"
-                      className="font-medium text-white-600 dark:text-blue-500 bg-red-800 p-2 rounded-lg flex items-center justify-center"
+                      className="font-medium text-white-600 bg-red-800 p-2 rounded-lg flex items-center justify-center"
                     >
                       <IoTrash size={15} color="white" />
                     </a>
@@ -260,11 +283,29 @@ const Users = () => {
               );
             })}
           </tbody>
+          
         </table>
+        
+      </div>
+
+      <div>
+      <div className="flex items-center mt-1 w-full justify-center">
+            <button className="flex items-center justify-center px-8 h-10 text-base font-medium text-white bg-slate-800 rounded-s hover:bg-slate-900 ">
+              Prev
+            </button>
+            <button className="flex items-center justify-center px-8 h-10 text-base font-medium text-white bg-slate-800 border-0 border-s border-slate-700 rounded-e hover:bg-slate-900">
+              Next
+            </button>
+        </div>
       </div>
       <div>
         {showModal && (
-          <Modal title={modalTitle} onClose={handleCloseModal} formData={formData} onChange={handleChange} />
+          <Modal
+            title={modalTitle}
+            onClose={handleCloseModal}
+            formData={formData}
+            onChange={handleChange}
+          />
         )}
       </div>
     </div>

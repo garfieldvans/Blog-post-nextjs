@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="sticky inset-x-0 inset-y-0 py-4 md:px-24 px-10 lg:px-36 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
-      <div className=" mr-6 ">
+      <div className=" mr-10 ">
         <h2 className="text-black text-md md:text-lg font-bold logo">
         <Link
           href="/"
@@ -27,16 +27,16 @@ const Header: React.FC = () => {
       <div className=" font-medium text-base py-2 hidden md:flex md:flex-row ">
         <Link
           href="/pages/blogs"
-          className={`py-2 px-5 w-24 justify-center flex ${
-            currentPath === "/pages/blogs" ? "font-bold bg-yellow-400 rounded-md" : ""
+          className={`py-2 px-5 w-20 justify-center flex  ${
+            currentPath === "/pages/blogs" ? "font-bold bg-yellow-400 rounded-md" : "font-semibold"
           }`}
         >
           Blogs
         </Link>
         <Link
           href="/pages/users"
-          className={`py-2 px-5 w-24 justify-center flex ${
-            currentPath === "/pages/users" ? "font-bold bg-yellow-400 rounded-md" : ""
+          className={`py-2 px-5 w-20 justify-center flex ${
+            currentPath === "/pages/users" ? "font-bold bg-yellow-400 rounded-md" : "font-semibold"
           }`}
         >
           User
