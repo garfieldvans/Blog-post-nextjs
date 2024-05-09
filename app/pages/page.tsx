@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
+import React, { Children, ReactNode } from 'react'
 
 export default function Pages ({
     children,
   }: Readonly<{
-    children: React.ReactNode;
+    children: ReactNode;
   }>) {
   return (
     <div>
