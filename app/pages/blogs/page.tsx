@@ -40,10 +40,10 @@ export default function Blogs() {
                   <h3 className="mb-3 text-slate-900 font-bold text-xl capitalize">
                     {post.title}
                   </h3>
-                  <div className="prose prose-slate prose-sm text-slate-600">
-                    <p>{post.body}...</p>
+                  <div className="prose prose-slate prose-sm text-slate-600 line-clamp-2 md:line-clamp-none">
+                    <p>{post.body}</p>
                   </div>
-                  <div className="my-3 text-slate-700">
+                  <div className="my-3 text-slate-700 text-xs">
                     <p>Posted by : {post.userName}</p>
                   </div>
                   <Link
