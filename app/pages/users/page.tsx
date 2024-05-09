@@ -179,6 +179,13 @@ const Users = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    // Reset formData saat menutup modal
+    setFormData({
+      name: "",
+      username: "",
+      email: "",
+      website: "",
+    });
   };
   
 
