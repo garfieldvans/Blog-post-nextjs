@@ -1,0 +1,8 @@
+@media only screen and (min-width: 425px) {
+    .postContainer{
+        padding-left: 0;
+    }
+    .titles{
+        font-size: 10px;
+    }
+}
