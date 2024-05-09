@@ -29,8 +29,8 @@ export default function RootLayout({
         <div className="">
           <Header/>
           <main className="md:px-24 px-10 lg:px-36 min-h-screen mb-8">{children}</main>
-          <ScrollToTopButton/>
           <Footer/>
+          <ScrollToTopButton/>
         </div>
       </body>
     </html>
