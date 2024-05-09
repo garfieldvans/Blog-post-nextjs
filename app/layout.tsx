@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Header from "./pages/header/page";
+import ScrollToTopButton from "./pages/ScrollToTop/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,8 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         <div className="">
           <Header/>
-          <main className="px-10 md:px-18">{children}</main>
+          <main className="px-10 lg:px-54">{children}</main>
+          <ScrollToTopButton/>
         </div>
       </body>
     </html>

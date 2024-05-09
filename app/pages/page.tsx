@@ -5,6 +5,7 @@ export default function Pages ({
   }: Readonly<{
     children: ReactNode;
   }>) {
+    
   return (
     <div>
         {children}

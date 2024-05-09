@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 
 export default function Blogs() {
   const [posts, setPosts] = useState<any[]>([]);
+  const [displayCount, setDisplayCount] = useState(5); // Jumlah item yang ditampilkan
+  const totalItems = posts.length;
 
   useEffect(() => {
     getPosts()
@@ -21,11 +23,17 @@ export default function Blogs() {
       });
   }, []);
 
+
+  const handleLoadMore = () => {
+    // Tambahkan 5 item lagi setiap kali tombol "load more" ditekan
+    setDisplayCount(displayCount + 5);
+  };
+
   return (
     <div>
       <h1 className="font-bold text-2xl my-4">Blogs</h1>
       <div className="">
-        {posts.map((post: any) => {
+        {posts.slice(0, displayCount).map((post: any, index:number) => {
           // console.log(post.comments);
           
           return (
@@ -66,7 +74,14 @@ export default function Blogs() {
           );
         })}
       </div>
-      <div></div>
+      <div className="flex justify-center w-full items-center">
+              {displayCount < totalItems && (
+        <button 
+        className="text-black font-semibold bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900"
+        onClick={handleLoadMore}>Load More</button>
+      )}
+
+      </div>
     </div>
   );
 }

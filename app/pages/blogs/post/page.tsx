@@ -23,7 +23,7 @@ export default function DetailPost({
       : [];
 
   return (
-    <div className="md:flex md:flex-row md:gap-x-16 mt-3 postContainer">
+    <div className="md:flex md:flex-row md:gap-x-16 md:mt-4 mt-3 postContainer">
       <div className="flex items-start bg-yellow-300 p-3 rounded-lg md:w-3/12 md:flex-none md:justify-center md:max-h-64 ">
         <div className=" flex justify-center flex-col w-full px-4 ">
           <div className="gap-x-3 flex items-center md:pt-4 flex-col">
