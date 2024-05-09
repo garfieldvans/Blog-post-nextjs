@@ -15,7 +15,7 @@ const Modal: React.FC<{
 }> = ({ title, onClose, formData, onChange }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white rounded-lg shadow lg:w-6/12 md:w-9/12 w-11/12 p-4 text-white">
+      <div className="bg-slate-800 rounded-lg shadow xl:w-5/12 md:w-9/12 w-11/12 p-4 text-white">
         <div className="flex justify-end font-bold text-white text-lg">
           <button onClick={onClose}>
             <IoClose size={30} />
@@ -27,11 +27,11 @@ const Modal: React.FC<{
         <div className="relative w-full lg:px-8">
           <div className="">
             <form className="">
-              <div className="grid gap-4 mb-8 grid-cols-2">
+              <div className="grid gap-6 mb-8 grid-cols-2">
                 <div className="col-span-2">
                   <label
                     htmlFor="name"
-                    className="block mb-2 text-sm font-medium text-gray-900 "
+                    className="block mb-2 text-sm font-medium text-gray-100 "
                   >
                     Full Name
                   </label>
@@ -39,7 +39,7 @@ const Modal: React.FC<{
                     type="text"
                     name="name"
                     id="name"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    className="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="Type product name"
                     required
                     value={formData.name}
@@ -49,7 +49,7 @@ const Modal: React.FC<{
                 <div className="col-span-2">
                   <label
                     htmlFor="username"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-sm font-medium text-gray-100"
                   >
                     Username
                   </label>
@@ -57,7 +57,7 @@ const Modal: React.FC<{
                     type="text"
                     name="username"
                     id="username"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    className="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="Type your full name"
                     required
                     value={formData.username}
@@ -67,7 +67,7 @@ const Modal: React.FC<{
                 <div className="col-span-2">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900"
+                    className="block mb-2 text-sm font-medium text-gray-100"
                   >
                     Email
                   </label>
@@ -75,7 +75,7 @@ const Modal: React.FC<{
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    className="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="e.g yourmail11@mail.example"
                     required
                     value={formData.email}
@@ -85,7 +85,7 @@ const Modal: React.FC<{
                 <div className="col-span-2">
                   <label
                     htmlFor="website"
-                    className="block mb-2 text-sm font-medium text-gray-900 "
+                    className="block mb-2 text-sm font-medium text-gray-100"
                   >
                     Website
                   </label>
@@ -93,7 +93,7 @@ const Modal: React.FC<{
                     type="text"
                     name="website"
                     id="website"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
+                    className="bg-slate-700 border border-slate-600 text-slate-200 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
                     placeholder="e.g www.yourcompany.org"
                     required
                     value={formData.website}
@@ -102,7 +102,7 @@ const Modal: React.FC<{
                 </div>
               </div>
 
-              <div className="flex flex-row justify-around md:justify-between lg:justify-between">
+              <div className="flex flex-row justify-around md:justify-between lg:justify-between md:mt-14">
                 <button
                   type="submit"
                   className="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center min-w-28 md:min-w-52 lg:m-w-28 justify-center"
@@ -289,11 +289,11 @@ const Users = () => {
       </div>
 
       <div>
-      <div className="flex items-center mt-1 w-full justify-center">
-            <button className="flex items-center justify-center px-8 h-10 text-base font-medium text-white bg-slate-800 rounded-s hover:bg-slate-900 ">
+      <div className="flex items-center mt-1 w-full justify-center gap-x-1">
+            <button className="flex items-center justify-center px-8 h-8 md:h-10 text-sm md:text-base font-medium text-white bg-slate-800 rounded-s-lg hover:bg-slate-900 ">
               Prev
             </button>
-            <button className="flex items-center justify-center px-8 h-10 text-base font-medium text-white bg-slate-800 border-0 border-s border-slate-700 rounded-e hover:bg-slate-900">
+            <button className="flex items-center justify-center px-8 h-8 md:h-10 text-sm md:text-base font-medium text-white bg-slate-800 rounded-e-lg hover:bg-slate-900">
               Next
             </button>
         </div>

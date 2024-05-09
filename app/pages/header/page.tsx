@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky inset-x-0 inset-y-0 py-4 md:px-24 px-10 lg:px-36 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
+    <header className="sticky inset-x-0 inset-y-0 py-4 md:px-24 px-4 lg:px-36 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
       <div className=" mr-10 ">
         <h2 className="text-black text-md md:text-lg font-bold logo">
         <Link
@@ -72,10 +72,10 @@ const Header: React.FC = () => {
         </button>
       </div>
       {isMobileMenuOpen && (
-        <div className="sm:hidden absolute top-full inset-y-0 right-0 bg-yellow-300 flex flex-col w-4/12 h-screen ">
+        <div className="sm:hidden absolute top-full inset-y-0 right-0 bg-yellow-300 flex flex-col w-6/12 h-screen drop-shadow-xl border-t border-yellow-400 ">
           <Link
             href="/pages/blogs"
-            className={`py-2 px-5 ${
+            className={`py-3 px-12 ${
               currentPath === "/pages/blogs"
                 ? "font-bold bg-yellow-400 rounded-md"
                 : ""
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
           </Link>
           <Link
             href="/pages/users"
-            className={`py-2 px-5 ${
+            className={`py-3 px-12 ${
               currentPath === "/pages/users"
                 ? "font-bold bg-yellow-400 rounded-md"
                 : ""
