@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true}>
         <div className="">
           <Header/>
-          <main className="px-10 lg:px-54">{children}</main>
+          <main className="md:px-24 px-10 lg:px-36">{children}</main>
           <ScrollToTopButton/>
         </div>
       </body>

@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky inset-x-0 inset-y-0 py-4 md:px-18 px-10 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
+    <header className="sticky inset-x-0 inset-y-0 py-4 md:px-24 px-10 lg:px-36 flex items-center bg-yellow-300 drop-shadow-lg Containers z-40">
       <div className=" mr-6 ">
         <h2 className="text-black text-md md:text-lg font-bold logo">
         <Link

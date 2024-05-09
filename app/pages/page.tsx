@@ -7,7 +7,7 @@ export default function Pages ({
   }>) {
     
   return (
-    <div>
+    <div className='md:px-28'>
         {children}
     </div>
   )
